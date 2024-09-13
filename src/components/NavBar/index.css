@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #112416;
+    position: relative;
+    z-index: 1000;
+  }
+  
+  .brand-title {
+    font-size: 20px;
+    color: white;
+    padding: 25px;
+    font-weight: bold;
+  }
+  
+  .navbar-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+  
+  .navbar-links li {
+    margin: 20px 0;
+    padding: 10px;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  .navbar-links a:hover {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  
+  .toggle-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+  
+  .toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    transition: all 0.3s;
+  }
+  
+  .toggle-button:hover .bar {
+    background-color: #f39c12;
+  }
+  
+  @media (max-width: 768px) {
+    .toggle-button {
+      display: flex;
+      background-color: #ffffff;
+      border: none;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+    .navbar{
+      position: sticky;
+    }
+    .navbar-links {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 200px;
+      background-color: #112416;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+    }
+    .button-p{
+      padding: 0px;
+  }
+  
+    .navbar-links.active {
+      transform: translateX(0);
+    }
+  
+    .navbar-links ul {
+      flex-direction: column;
+      padding-left: 20px;
+      padding-top: 60px; /* Added padding to avoid overlap with the header */
+    }
+  
+    .navbar-links ul li {
+      margin: 10px 0;
+    }
+  
+    .overlay {
+      display: none;
+    }
+  
+    .overlay.active {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  }
+  
